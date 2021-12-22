@@ -1,0 +1,67 @@
+<%= form_with(model: book) do |form| %>
+  <% if book.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+
+      <ul>
+        <% book.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :root, style: "display: block" %>
+    <%= form.text_field :root %>
+  </div>
+
+  <div>
+    <%= form.label :assets, style: "display: block" %>
+    <%= form.text_field :assets %>
+  </div>
+
+  <div>
+    <%= form.label :equity, style: "display: block" %>
+    <%= form.text_field :equity %>
+  </div>
+
+  <div>
+    <%= form.label :liabilities, style: "display: block" %>
+    <%= form.text_field :liabilities %>
+  </div>
+
+  <div>
+    <%= form.label :income, style: "display: block" %>
+    <%= form.text_field :income %>
+  </div>
+
+  <div>
+    <%= form.label :expenses, style: "display: block" %>
+    <%= form.text_field :expenses %>
+  </div>
+
+  <div>
+    <%= form.label :checking, style: "display: block" %>
+    <%= form.text_field :checking %>
+  </div>
+
+  <div>
+    <%= form.label :savings, style: "display: block" %>
+    <%= form.text_field :savings %>
+  </div>
+
+  <div>
+    <%= form.label :settings, style: "display: block" %>
+    <%= form.text_area :settings %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
